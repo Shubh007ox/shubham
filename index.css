@@ -1,0 +1,21 @@
+function savedata(event){
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const pwd =   document.getElementById('pwd').value;
+
+    const object = {
+        email,
+        pwd
+    }
+    localStorage.setItem(object.email,JSON.stringify(object));
+    localStorage.getItem('shubham14apr@gmail.com');
+    showNAmeandPass(object);
+    
+
+}
+function showNAmeandPass(user){
+    const parentnode = document.getElementById("list of user");
+    const childnode = `<li> ${user.email} -- ${user.pwd} </li>`
+    parentnode.innerHTML = parentnode.innerHTML + childnode
+}
+
